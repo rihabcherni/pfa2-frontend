@@ -25,8 +25,8 @@ class Cours {
 
   factory Cours.fromJson(Map<String, dynamic> json) {
     return Cours(
-      id: json['id'] ?? 0, // Handle null by providing default value
-      titre: json['titre'] ?? '', // Handle null by providing empty string
+      id: json['id'] ?? 0, 
+      titre: json['titre'] ?? '',
       contents: (json['contents'] as List<dynamic>?)?.map((contentJson) {
             final contentType = ContentType.values[contentJson['contentType']];
             switch (contentType) {
@@ -42,20 +42,20 @@ class Cours {
                 throw Exception('Unknown content type: $contentType');
             }
           }).toList() ??
-          [], // Handle null by providing empty list
+          [], 
       description:
-          json['description'] ?? '', // Handle null by providing empty string
+          json['description'] ?? '', 
       cours_photo:
-          json['cours_photo'] ?? '', // Handle null by providing empty string
+          json['cours_photo'] ?? '', 
       date: json['date'] != null
           ? DateTime.parse(json['date'])
-          : DateTime.now(), // Handle null by providing current date
+          : DateTime.now(), 
       rating: json['rating']?.toDouble() ??
-          0.0, // Handle null by providing default value
-      numRated: json['numRated'] ?? 0, // Handle null by providing default value
+          0.0, 
+      numRated: json['numRated'] ?? 0, 
       categorie:
-          json['categorie'] ?? '', // Handle null by providing empty string
-      niveau: json['niveau'] ?? '', // Handle null by providing empty string
+          json['categorie'] ?? '', 
+      niveau: json['niveau'] ?? '', 
     );
   }
 }
@@ -95,15 +95,15 @@ class ContenuTexte extends Content {
 
   static ContenuTexte fromJson(contentJson) {
     return ContenuTexte(
-      id: contentJson['id'] ?? 0, // Handle null by providing default value
+      id: contentJson['id'] ?? 0, 
       titre:
-          contentJson['titre'] ?? '', // Handle null by providing empty string
+          contentJson['titre'] ?? '', 
       description: contentJson['description'] ??
-          '', // Handle null by providing empty string
+          '', 
       lessonId: contentJson['lessonId'] ??
-          0, // Handle null by providing default value
+          0, 
       texte:
-          contentJson['texte'] ?? '', // Handle null by providing empty string
+          contentJson['texte'] ?? '', 
     );
   }
 }
@@ -122,15 +122,15 @@ class ContenuImage extends Content {
 
   static ContenuImage fromJson(contentJson) {
     return ContenuImage(
-      id: contentJson['id'] ?? 0, // Handle null by providing default value
+      id: contentJson['id'] ?? 0, 
       titre:
-          contentJson['titre'] ?? '', // Handle null by providing empty string
+          contentJson['titre'] ?? '', 
       description: contentJson['description'] ??
-          '', // Handle null by providing empty string
+          '', 
       lessonId: contentJson['lessonId'] ??
-          0, // Handle null by providing default value
+          0, 
       imageUrl: contentJson['imageUrl'] ??
-          '', // Handle null by providing empty string
+          '', 
     );
   }
 }
@@ -149,15 +149,15 @@ class ContenuVideo extends Content {
 
   static ContenuVideo fromJson(contentJson) {
     return ContenuVideo(
-      id: contentJson['id'] ?? 0, // Handle null by providing default value
+      id: contentJson['id'] ?? 0, 
       titre:
-          contentJson['titre'] ?? '', // Handle null by providing empty string
+          contentJson['titre'] ?? '', 
       description: contentJson['description'] ??
-          '', // Handle null by providing empty string
+          '', 
       lessonId: contentJson['lessonId'] ??
-          0, // Handle null by providing default value
+          0, 
       videoUrl: contentJson['videoUrl'] ??
-          '', // Handle null by providing empty string
+          '', 
     );
   }
 }
@@ -176,15 +176,15 @@ class ContenuAudio extends Content {
 
   static ContenuAudio fromJson(contentJson) {
     return ContenuAudio(
-      id: contentJson['id'] ?? 0, // Handle null by providing default value
+      id: contentJson['id'] ?? 0, 
       titre:
-          contentJson['titre'] ?? '', // Handle null by providing empty string
+          contentJson['titre'] ?? '', 
       description: contentJson['description'] ??
-          '', // Handle null by providing empty string
+          '', 
       lessonId: contentJson['lessonId'] ??
-          0, // Handle null by providing default value
+          0, 
       audioUrl: contentJson['audioUrl'] ??
-          '', // Handle null by providing empty string
+          '', 
     );
   }
 }

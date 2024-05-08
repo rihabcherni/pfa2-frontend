@@ -43,7 +43,6 @@ class _CoursesCategoryScreenState extends State<CoursesCategoryScreen> {
                   title: Text(course.titre),
                   subtitle: Text(course.description),
                   onTap: () {
-                    // Handle course tap
                   },
                 );
               },

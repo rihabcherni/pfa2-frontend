@@ -131,8 +131,6 @@ class EtudiantScreenState extends State<EtudiantScreen> {
   }
 
   void _editEtudiant(BuildContext context, Etudiant etudiant) {
-    // Navigate to an edit screen with the selected etudiant data
-    // For example:
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -148,8 +146,6 @@ class EtudiantScreenState extends State<EtudiantScreen> {
   }
 
   void _showDetails(BuildContext context, Etudiant etudiant) {
-    // Show a dialog or navigate to a details screen with the selected etudiant data
-    // For example:
     showDialog(
       context: context,
       builder: (context) {
@@ -162,7 +158,6 @@ class EtudiantScreenState extends State<EtudiantScreen> {
               Text('Nom: ${etudiant.nom}'),
               Text('Prenom: ${etudiant.prenom}'),
               Text('Email: ${etudiant.email}'),
-              // Add more details as needed
             ],
           ),
           actions: [

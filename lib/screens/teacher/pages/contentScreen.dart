@@ -1,7 +1,4 @@
-// content_screen.dart
-
 import 'package:flutter/material.dart';
-import 'package:pfa_frontend/models/teacher/content.dart';
 import 'package:pfa_frontend/models/teacher/cours.dart';
 
 class ContentScreen extends StatefulWidget {
@@ -146,35 +143,35 @@ class _ContentScreenState extends State<ContentScreen> {
 
     if (type == ContentType.Text) {
       content = ContenuTexte(
-        id: 0, // Set appropriate ID
+        id: 0, 
         titre: 'Text',
         description: description,
-        lessonId: 0, // Set appropriate lesson ID
-        texte: '', // Add text content
+        lessonId: 0, 
+        texte: '', 
       );
     } else if (type == ContentType.Image) {
       content = ContenuImage(
-        id: 0, // Set appropriate ID
+        id: 0,
         titre: 'Image',
         description: description,
-        lessonId: 0, // Set appropriate lesson ID
-        imageUrl: mediaUrl, // Add image URL
+        lessonId: 0, 
+        imageUrl: mediaUrl,
       );
     } else if (type == ContentType.Video) {
       content = ContenuVideo(
-        id: 0, // Set appropriate ID
+        id: 0, 
         titre: 'Video',
         description: description,
-        lessonId: 0, // Set appropriate lesson ID
-        videoUrl: mediaUrl, // Add video URL
+        lessonId: 0, 
+        videoUrl: mediaUrl, 
       );
     } else if (type == ContentType.Audio) {
       content = ContenuAudio(
-        id: 0, // Set appropriate ID
+        id: 0, 
         titre: 'Audio',
         description: description,
-        lessonId: 0, // Set appropriate lesson ID
-        audioUrl: mediaUrl, // Add audio URL
+        lessonId: 0, 
+        audioUrl: mediaUrl,
       );
     } else {
       throw Exception('Unsupported content type');
@@ -182,11 +179,9 @@ class _ContentScreenState extends State<ContentScreen> {
 
     widget.onContentAdded(content);
 
-    // Clear text fields
     _mediaUrlController.clear();
     _descriptionController.clear();
 
-    // Close the expansion panel
     setState(() {
       _expansionStates[type] = false;
     });

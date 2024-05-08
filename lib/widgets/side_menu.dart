@@ -47,31 +47,15 @@ class SideMenu extends StatelessWidget {
                 default:
                   Navigator.of(context).pushNamed('/');
                   break;
-              } // Navigate to home screen or perform desired action
+              } 
             },
           ),
-          // ListTile(
-          //   leading: Icon(Icons.category),
-          //   title: Text("Categories"),
-          //   onTap: () {
-          //     Navigator.pop(context); // Close the drawer
-          //     // Navigate to categories screen or perform desired action
-          //   },
-          // ),
-          // ListTile(
-          //   leading: Icon(Icons.bookmark),
-          //   title: Text("Bookmarks"),
-          //   onTap: () {
-          //     Navigator.pop(context); // Close the drawer
-          //     // Navigate to bookmarks screen or perform desired action
-          //   },
-          // ),
+         
           ListTile(
             leading: Icon(Icons.settings),
             title: Text("Settings"),
             onTap: () {
-              Navigator.pop(context); // Close the drawer
-              // Navigate to settings screen or perform desired action
+              Navigator.pop(context);
             },
           ),
           ListTile(
@@ -79,7 +63,7 @@ class SideMenu extends StatelessWidget {
             title: Text("logout"),
             onTap: () {
               logoutUser(
-                  context, refreshAuthToken!, authToken!); // Close the drawer
+                  context, refreshAuthToken!, authToken!);
             },
           ),
         ],

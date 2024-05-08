@@ -26,7 +26,6 @@ class ProfileScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              /// -- IMAGE
               Stack(
                 children: [
                   SizedBox(
@@ -48,7 +47,6 @@ class ProfileScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyText2),
               const SizedBox(height: 20),
 
-              /// -- BUTTON
               SizedBox(
                 width: 200,
                 child: ElevatedButton(
@@ -65,14 +63,12 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: 30),
               const SizedBox(height: 10),
 
-              /// -- MENU
               const Divider(),
               const SizedBox(height: 10),
               ProfileMenuWidget(
                   title: "Information",
                   icon: Icons.info,
                   onPress: () {
-                    // Navigate to EnseignantInfoScreen
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -109,7 +105,6 @@ class ProfileScreen extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            // Perform logout action
                             Navigator.of(context).pop();
                           },
                           child: const Text("Yes"),

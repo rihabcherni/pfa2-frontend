@@ -40,7 +40,6 @@ class _LessonSectionState extends State<LessonSection> {
               final LessonOnly lesson = lessons[index];
               return GestureDetector(
                 onTap: () {
-                  // Navigate to the new screen with the lesson details
                   Navigator.push(
                     context,
                     MaterialPageRoute(

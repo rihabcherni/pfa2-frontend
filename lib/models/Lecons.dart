@@ -56,23 +56,17 @@ class LessonDetails {
 
   factory LessonDetails.fromJson(Map<String, dynamic> json) {
     List<LessonContent> allContent = [];
-
-    // Add all texts to the content list
     allContent.addAll(List<LessonText>.from(
         json['contenu_texts'].map((x) => LessonText.fromJson(x))));
 
-    // Add all images to the content list
     allContent.addAll(List<LessonImage>.from(
         json['contenu_images'].map((x) => LessonImage.fromJson(x))));
 
-    // Add all videos to the content list
     allContent.addAll(List<LessonVideo>.from(
         json['contenu_videos'].map((x) => LessonVideo.fromJson(x))));
-    // Add all videos to the content list
     allContent.addAll(List<LessonAudio>.from(
         json['contenu_audio'].map((x) => LessonAudio.fromJson(x))));
 
-    // Sort all content based on their order value
     allContent.sort((a, b) => a.ordre.compareTo(b.ordre));
 
     return LessonDetails(

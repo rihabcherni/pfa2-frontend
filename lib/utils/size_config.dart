@@ -9,15 +9,12 @@ class SizeConfig {
 
   static late SizeConfig _instance;
 
-  // Private constructor to prevent instantiation from outside
   SizeConfig._internal();
 
-  // Getter to access the instance
   static SizeConfig getInstance() {
     return _instance;
   }
 
-  // Initialize SizeConfig
   static void init(BuildContext context) {
     _instance = SizeConfig._internal();
     _instance._mediaQueryData = MediaQuery.of(context);

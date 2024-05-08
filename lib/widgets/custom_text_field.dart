@@ -29,10 +29,10 @@ class CustomTextField extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Color.fromARGB(255, 241, 240, 240)
-                .withOpacity(0.5), // Shadow color
-            spreadRadius: 5, // Spread radius
-            blurRadius: 7, // Blur radius
-            offset: const Offset(0, 3), // Offset in x and y directions
+                .withOpacity(0.5), 
+            spreadRadius: 5, 
+            blurRadius: 7, 
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -65,7 +65,7 @@ class CustomTextField extends StatelessWidget {
                     color: kPrimaryColor,
                   ),
                 )
-              : null, // Add suffix icon
+              : null,
         ),
       ),
     );

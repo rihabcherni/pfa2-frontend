@@ -20,14 +20,13 @@ class AddCoursScreen extends StatefulWidget {
 class _AddCoursScreenState extends State<AddCoursScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  // Course details
   late String _title;
   late String _description;
-  Uint8List? _imageBytes; // Bytes for selected image
-  late XFile _videoFile; // File for selected video
-  VideoPlayerController? _videoController; // Controller for video playback
-  late String? _audioPath; // Path for recorded audio
-  List<Content> _contents = []; // List of contents
+  Uint8List? _imageBytes; 
+  late XFile _videoFile;
+  VideoPlayerController? _videoController; 
+  late String? _audioPath; 
+  List<Content> _contents = [];
   final picker = ImagePicker();
   final AudioPlayer audioPlayer = AudioPlayer();
 
@@ -64,7 +63,7 @@ class _AddCoursScreenState extends State<AddCoursScreen> {
     if (pickedFile != null) {
       setState(() {
         _videoFile = pickedFile;
-        _videoController!.dispose(); // Dispose previous controller
+        _videoController!.dispose(); 
         _videoController = VideoPlayerController.file(File(_videoFile.path))
           ..initialize().then((_) {
             setState(() {});
@@ -74,8 +73,6 @@ class _AddCoursScreenState extends State<AddCoursScreen> {
   }
 
   void _recordAudio() async {
-    // Implement recording logic using audioplayers package
-    // This is just a placeholder
     _audioPath = 'path_to_recorded_audio';
   }
 
@@ -86,18 +83,6 @@ class _AddCoursScreenState extends State<AddCoursScreen> {
     }
 
     _formKey.currentState!.save();
-
-    // Perform saving of course data here
-    // For example:
-    // Course course = Course(
-    //   title: _title,
-    //   description: _description,
-    //   subTitle: _subTitle,
-    //   contents: _contents,
-    //   imagePath: _imagePath,
-    // );
-
-    // Clear the form fields
     setState(() {
       _title = '';
       _description = '';
@@ -106,8 +91,6 @@ class _AddCoursScreenState extends State<AddCoursScreen> {
       _videoController = VideoPlayerController.network('');
       _audioPath = null;
     });
-
-    // Navigate to the next screen or perform any other action after saving
   }
 
   @override
@@ -174,7 +157,7 @@ class _AddCoursScreenState extends State<AddCoursScreen> {
                   child: Text('Select Image'),
                 ),
                 SizedBox(height: 20),
-                if (_imageBytes != null) // Show selected image if available
+                if (_imageBytes != null) 
                   Image.memory(_imageBytes!),
                 SizedBox(height: 20),
                 ElevatedButton(
@@ -208,7 +191,6 @@ class _AddCoursScreenState extends State<AddCoursScreen> {
                   child: Text('Add Content'),
                 ),
                 SizedBox(height: 20),
-                // Display added contents
                 if (_contents.isNotEmpty)
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

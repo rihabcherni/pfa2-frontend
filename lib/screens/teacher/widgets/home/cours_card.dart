@@ -98,7 +98,7 @@ class CoursCard extends StatelessWidget {
                           letterSpacing: 1.2,
                         ),
                         textAlign: TextAlign.right,
-                      ), // Align text to the center                      ),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -106,18 +106,14 @@ class CoursCard extends StatelessWidget {
                       child: Text(
                         cours.categorie,
                         style: TextStyle(
-                          color: const Color.fromARGB(
-                              255, 72, 71, 71), // Set text color to red
+                          color: const Color.fromARGB(255, 72, 71, 71),
                           fontSize: context
                               .watch<SettingsProvider>()
                               .settings
                               .bigTextSize,
-                          fontWeight:
-                              FontWeight.normal, // Set font weight to bold
-                          fontStyle:
-                              FontStyle.normal, // Set font style to italic
-                          letterSpacing: 1.2, // Set letter spacing
-                          // Add more text styles as needed
+                          fontWeight: FontWeight.normal,
+                          fontStyle: FontStyle.normal,
+                          letterSpacing: 1.2,
                         ),
                       ),
                     ),
@@ -155,8 +151,7 @@ class CoursCard extends StatelessWidget {
                               color: Colors.amber,
                             ),
                             ignoreGestures: true,
-                            onRatingUpdate:
-                                (double value) {}, // Disable tap functionality
+                            onRatingUpdate: (double value) {},
                           ),
                           const SizedBox(width: 3),
                           Text(

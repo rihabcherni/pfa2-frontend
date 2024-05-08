@@ -40,10 +40,6 @@ class SideMenuAdmin extends StatelessWidget {
               IconButton(
                   iconSize: 40,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  // icon: SvgPicture.asset(
-                  //   'assets/pie-chart.svg',
-                  //   color: AppColors.iconGray,
-                  // ),
                   icon: Icon(
                     Icons.home,
                     color: AppColors.iconGray,
@@ -58,10 +54,6 @@ class SideMenuAdmin extends StatelessWidget {
               IconButton(
                   iconSize: 40,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  // icon: SvgPicture.asset(
-                  //   'assets/pie-chart.svg',
-                  //   color: AppColors.iconGray,
-                  // ),
                   icon: Icon(
                     Icons.school,
                     color: AppColors.iconGray,
@@ -77,10 +69,6 @@ class SideMenuAdmin extends StatelessWidget {
               IconButton(
                   iconSize: 40,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  // icon: SvgPicture.asset(
-                  //   'assets/pie-chart.svg',
-                  //   color: AppColors.iconGray,
-                  // ),
                   icon: Icon(
                     Icons.people,
                     color: AppColors.iconGray,
@@ -120,14 +108,6 @@ class SideMenuAdmin extends StatelessWidget {
                           builder: (context) => AdminProfileScreen(),
                         ));
                   }),
-              // IconButton(
-              //     iconSize: 20,
-              //     padding: EdgeInsets.symmetric(horizontal: 30.0),
-              //     icon: SvgPicture.asset(
-              //       'assets/invoice.svg',
-              //       color: AppColors.iconGray,
-              //     ),
-              //     onPressed: () {}),
             ],
           ),
         ),

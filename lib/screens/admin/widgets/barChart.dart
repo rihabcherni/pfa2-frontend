@@ -19,7 +19,7 @@ class BarChartComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     int maxCount = countsByMonth.reduce((a, b) => a > b ? a : b);
     int interval =
-        (maxCount / 4).ceil(); // Calculate interval based on maxCount
+        (maxCount / 4).ceil();
 
     return BarChart(
       BarChartData(
@@ -28,7 +28,7 @@ class BarChartComponent extends StatelessWidget {
         axisTitleData: FlAxisTitleData(leftTitle: AxisTitle(reservedSize: 20)),
         gridData: FlGridData(
             drawHorizontalLine: true,
-            horizontalInterval: interval.toDouble()), // Use interval here
+            horizontalInterval: interval.toDouble()),
         titlesData: FlTitlesData(
           leftTitles: SideTitles(
             showTitles: true,
@@ -41,8 +41,8 @@ class BarChartComponent extends StatelessWidget {
               return value.toInt().toString();
             },
             reservedSize: 30,
-            margin: 10, // Adjust as needed
-            interval: interval.toDouble(), // Use interval here
+            margin: 10, 
+            interval: interval.toDouble(), 
           ),
           bottomTitles: SideTitles(
             showTitles: true,

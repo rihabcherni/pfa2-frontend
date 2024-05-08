@@ -32,7 +32,7 @@ class ListeRouter {
 
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => QuizScreen());
+        return MaterialPageRoute(builder: (_) => LoadingScreen());
       case '/settings-size':
         return MaterialPageRoute(builder: (_) => SettingsScreen());
 
@@ -89,10 +89,10 @@ class ListeRouter {
 
       case '/teacher':
         return MaterialPageRoute(builder: (_) => HomeScreenTeacher());
-      case '/Etudiant': // Fix route name here
+      case '/Etudiant': 
         return MaterialPageRoute(
-            builder: (_) => EtudiantScreen()); // Fix class name here
-      case '/profile': // Fix route name here
+            builder: (_) => EtudiantScreen()); 
+      case '/profile': 
         return MaterialPageRoute(builder: (_) => ProfileScreen());
 
       // admin

@@ -25,7 +25,6 @@ class _SettingsPageState extends State<SettingsPage> {
             onChanged: (value) {
               setState(() {
                 _darkModeEnabled = value;
-                // You can add logic to enable/disable dark mode here
               });
             },
           ),
@@ -33,35 +32,28 @@ class _SettingsPageState extends State<SettingsPage> {
             title: const Text('Notifications'),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
-              // Navigate to the notifications settings page
-              // You can use Navigator.push to navigate to another page
-              // Example: Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsSettingsPage()));
+            
             },
           ),
           ListTile(
             title: const Text('Privacy Policy'),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
-              // Navigate to the privacy policy page
-              // Example: Navigator.push(context, MaterialPageRoute(builder: (context) => PrivacyPolicyPage()));
+             
             },
           ),
           ListTile(
             title: const Text('Terms of Service'),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: () {
-              // Navigate to the terms of service page
-              // Example: Navigator.push(context, MaterialPageRoute(builder: (context) => TermsOfServicePage()));
             },
           ),
-          // Add more settings options as needed
         ],
       ),
     );
   }
 }
 
-// Example of a settings page that can be navigated to
 class NotificationsSettingsPage extends StatelessWidget {
   const NotificationsSettingsPage({Key? key}) : super(key: key);
 

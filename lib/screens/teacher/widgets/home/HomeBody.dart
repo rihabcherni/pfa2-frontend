@@ -28,7 +28,6 @@ class _HomeBodyState extends State<HomeBody> {
     });
     print(coursList);
     try {
-      // Handle any errors if necessary
     } catch (e) {
       print('Error fetching data: $e');
     }
@@ -54,7 +53,6 @@ class _HomeBodyState extends State<HomeBody> {
                 ),
               ),
               onChanged: (value) {
-                // Implement your search functionality here
               },
             ),
           ),

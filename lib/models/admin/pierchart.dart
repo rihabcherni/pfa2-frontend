@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:pfa_frontend/models/category.dart';
 import 'package:pfa_frontend/services/admin/category_service.dart';
-import 'package:pfa_frontend/utils/constants.dart';
 import 'package:pfa_frontend/utils/setting_provider.dart';
-import 'package:provider/provider.dart'; // Import CategoryService here
+import 'package:provider/provider.dart'; 
 
 class PieChartPage extends StatefulWidget {
   @override
@@ -24,8 +23,7 @@ class _PieChartPageState extends State<PieChartPage> {
     Colors.indigo,
     Colors.deepOrange,
     Colors.cyan,
-  ]; // Define a list of colors for categories
-
+  ]; 
   @override
   void initState() {
     super.initState();

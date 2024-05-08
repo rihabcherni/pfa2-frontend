@@ -11,10 +11,10 @@ class UpdateProfileScreen extends StatefulWidget {
 }
 
 class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
-  String _fullName = 'John Doe'; // Example existing data
-  String _email = 'johndoe@example.com'; // Example existing data
-  String _phone = '123-456-7890'; // Example existing data
-  String _password = 'password'; // Example existing data
+  String _fullName = 'John Doe'; 
+  String _email = 'johndoe@example.com'; 
+  String _phone = '123-456-7890'; 
+  String _password = 'password'; 
   File? _image;
 
   @override
@@ -31,7 +31,6 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // -- IMAGE with ICON
             Stack(
               children: [
                 GestureDetector(
@@ -58,7 +57,6 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
             ),
             const SizedBox(height: 50),
 
-            // -- Form Fields with existing data
             TextFormField(
               initialValue: _fullName,
               onChanged: (value) => _fullName = value,
@@ -101,7 +99,6 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
             ),
             const SizedBox(height: 20),
 
-            // -- Form Submit Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -124,13 +121,11 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   }
 
   void _submitForm() {
-    // Implement logic to update profile with the edited data
     print('Full Name: $_fullName');
     print('Email: $_email');
     print('Phone: $_phone');
     print('Password: $_password');
     if (_image != null) {
-      // Implement logic to update profile image
     }
   }
 

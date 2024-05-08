@@ -13,7 +13,6 @@ void main() {
         ChangeNotifierProvider(create: (_) => SettingsProvider()),
         ChangeNotifierProvider.value(value: AuthProvider()),
       ],
-      builder: (context, child) => AccessibilityTools(child: child),
       child: MyApp(),
     ),
   );

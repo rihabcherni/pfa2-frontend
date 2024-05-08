@@ -64,17 +64,14 @@ class LessonDetailsScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 8),
-                  // Wrap the content in a SingleChildScrollView
                   SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Display content
                         for (var content in lessonDetails.content)
                           _Accordion(
                             content: content,
                           ),
-                        // _buildContentWidget(content),
                       ],
                     ),
                   ),

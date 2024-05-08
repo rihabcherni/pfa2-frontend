@@ -310,7 +310,7 @@ class _AllCourseScreenState extends State<AllCourseScreen> {
                                   },
                                   child: Container(
                                     width: double.infinity,
-                                    height: 120, // Adjust as needed
+                                    height: 120,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20),
                                       image: DecorationImage(

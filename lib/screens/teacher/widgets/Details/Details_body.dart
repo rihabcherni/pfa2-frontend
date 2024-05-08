@@ -143,7 +143,6 @@ class DetailsBody extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                   onTap: () {
-                    // Handle content tap if needed
                   },
                 );
               },

@@ -40,7 +40,7 @@ class DetailsScreen extends StatelessWidget {
         'Return',
         style: Theme.of(context).textTheme.bodyText2!.copyWith(
               color: const Color.fromARGB(
-                  255, 7, 53, 91), // Change the color of the text to blue
+                  255, 7, 53, 91), 
               fontWeight: FontWeight.bold,
               fontSize:
                   context.watch<SettingsProvider>().settings.smallTextSize,

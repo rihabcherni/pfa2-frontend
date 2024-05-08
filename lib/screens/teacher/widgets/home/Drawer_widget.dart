@@ -5,7 +5,6 @@ class Drawer_widget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        // Remove padding
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
@@ -14,7 +13,7 @@ class Drawer_widget extends StatelessWidget {
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.asset(
-                  'assets/images/account.png', // Load image from assets
+                  'assets/images/account.png', 
                   fit: BoxFit.cover,
                   width: 90,
                   height: 90,
@@ -30,7 +29,6 @@ class Drawer_widget extends StatelessWidget {
             Navigator.pop(context);
           }),
           buildListTile('Etudiants', Icons.school, () {
-            // Close the drawer
             Navigator.pop(context);
             Navigator.pushNamed(context, '/Etudiant');
           }),

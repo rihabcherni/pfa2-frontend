@@ -7,5 +7,4 @@ class Category {
 List<Category> categoryList = [
   Category('Physics'),
   Category('Science'),
-  // Add more categories as needed
 ];

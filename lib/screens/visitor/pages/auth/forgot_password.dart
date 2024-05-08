@@ -101,7 +101,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 .textSize,
                           ),
                           textAlign:
-                              TextAlign.center, // Center the text horizontally
+                              TextAlign.center, 
                         ),
                       ),
                       const SizedBox(
@@ -122,7 +122,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           context: context,
           builder: (context) {
             Future.delayed(const Duration(seconds: 3), () {
-              Navigator.of(context).pop(); // Close the dialog after 3 seconds
+              Navigator.of(context).pop();
             });
 
             return AlertDialog(
