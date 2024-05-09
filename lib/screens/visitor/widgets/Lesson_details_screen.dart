@@ -1,5 +1,3 @@
-import 'package:accordion/accordion.dart';
-import 'package:accordion/controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:pfa_frontend/models/Lecons.dart';
 import 'package:pfa_frontend/services/visitor/lesson_details_visitor.dart';
@@ -91,10 +89,17 @@ class LessonDetailsScreen extends StatelessWidget {
   }
 }
 
-class _Accordion extends StatelessWidget {
+class _Accordion extends StatefulWidget {
   final LessonContent content;
 
   const _Accordion({Key? key, required this.content}) : super(key: key);
+
+  @override
+  _AccordionState createState() => _AccordionState();
+}
+
+class _AccordionState extends State<_Accordion> {
+  bool _isOpen = false;
 
   @override
   Widget build(BuildContext context) {
@@ -102,39 +107,64 @@ class _Accordion extends StatelessWidget {
     final contentStyle = TextStyle(color: Colors.black, fontSize: 16);
 
     Widget sectionContent;
-    if (content is LessonText) {
+    if (widget.content is LessonText) {
       sectionContent = ListTile(
-        title: Text((content as LessonText).titre, style: contentStyle),
-        subtitle: Text((content as LessonText).texte, style: contentStyle),
-      );
-    } else if (content is LessonImage) {
-      sectionContent = ListTile(
-        title: Text((content as LessonImage).titre, style: contentStyle),
+        title: Text((widget.content as LessonText).titre, style: contentStyle),
         subtitle:
-            Text((content as LessonImage).desciptionImage, style: contentStyle),
+            Text((widget.content as LessonText).texte, style: contentStyle),
       );
-    } else if (content is LessonVideo) {
+    } else if (widget.content is LessonImage) {
       sectionContent = ListTile(
-        title: Text((content as LessonVideo).titre, style: contentStyle),
-        subtitle:
-            Text((content as LessonVideo).desciptionVideo, style: contentStyle),
+        title: Text((widget.content as LessonImage).titre, style: contentStyle),
+        subtitle: Text((widget.content as LessonImage).desciptionImage,
+            style: contentStyle),
       );
-    } else if (content is LessonAudio) {
+    } else if (widget.content is LessonVideo) {
       sectionContent = ListTile(
-        title: Text((content as LessonAudio).titre, style: contentStyle),
-        subtitle:
-            Text((content as LessonAudio).desciptionAudio, style: contentStyle),
+        title: Text((widget.content as LessonVideo).titre, style: contentStyle),
+        subtitle: Text((widget.content as LessonVideo).desciptionVideo,
+            style: contentStyle),
+      );
+    } else if (widget.content is LessonAudio) {
+      sectionContent = ListTile(
+        title: Text((widget.content as LessonAudio).titre, style: contentStyle),
+        subtitle: Text((widget.content as LessonAudio).desciptionAudio,
+            style: contentStyle),
       );
     } else {
       sectionContent = SizedBox();
     }
 
-    return AccordionSection(
-      isOpen: false,
-      contentVerticalPadding: 20,
-      leftIcon: _getIconForContentType(content),
-      header: Text(_getHeaderForContentType(content), style: headerStyle),
-      content: sectionContent,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        GestureDetector(
+          onTap: () {
+            setState(() {
+              _isOpen = !_isOpen;
+            });
+          },
+          child: Container(
+            color: Colors.blue,
+            padding: EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+                _getIconForContentType(widget.content),
+                SizedBox(width: 16),
+                Text(_getHeaderForContentType(widget.content),
+                    style: headerStyle),
+                Spacer(),
+                Icon(
+                    _isOpen
+                        ? Icons.keyboard_arrow_up
+                        : Icons.keyboard_arrow_down,
+                    color: Colors.white),
+              ],
+            ),
+          ),
+        ),
+        if (_isOpen) sectionContent,
+      ],
     );
   }
 
