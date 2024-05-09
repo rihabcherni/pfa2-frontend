@@ -175,112 +175,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                                     children: [
                                       Expanded(
                                         child: Container(
-                                          height: 300,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.5,
-                                          child: Column(
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  PrimaryText(
-                                                    text:
-                                                        'Number of courses by month ' +
-                                                            _selectedYear
-                                                                .toString(),
-                                                    size: 16,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Color.fromARGB(
-                                                        255, 24, 111, 250),
-                                                  ),
-                                                  Container(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                            horizontal: 10),
-                                                    margin: EdgeInsets.only(
-                                                        bottom: 5),
-                                                    decoration: BoxDecoration(
-                                                      color: Colors.white,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8),
-                                                      border: Border.all(
-                                                          color: const Color
-                                                              .fromARGB(255,
-                                                              220, 220, 220)),
-                                                    ),
-                                                    child:
-                                                        DropdownButton<String>(
-                                                      underline: Container(),
-                                                      value: _selectedYear
-                                                          .toString(),
-                                                      onChanged:
-                                                          (String? year) {
-                                                        if (year ==
-                                                            DateTime.now()
-                                                                .year
-                                                                .toString()) {
-                                                          setState(() {
-                                                            _selectedYear =
-                                                                DateTime.now()
-                                                                    .year;
-                                                            _selectedYearCount =
-                                                                countsByMonth
-                                                                    .cast<
-                                                                        int>();
-                                                          });
-                                                        } else if (year ==
-                                                            lastYear
-                                                                .toString()) {
-                                                          setState(() {
-                                                            _selectedYear =
-                                                                lastYear;
-                                                            _selectedYearCount =
-                                                                countsByMonthLastYear
-                                                                    .cast<
-                                                                        int>();
-                                                          });
-                                                        }
-                                                      },
-                                                      items: [
-                                                        DateTime.now()
-                                                            .year
-                                                            .toString(),
-                                                        lastYear.toString()
-                                                      ].map((String year) {
-                                                        return DropdownMenuItem<
-                                                            String>(
-                                                          value: year,
-                                                          child: Text(year),
-                                                        );
-                                                      }).toList(),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Expanded(
-                                                child: BarChartComponent(
-                                                  year: _selectedYear,
-                                                  countsByMonth:
-                                                      _selectedYearCount,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(width: 16),
-                                      Expanded(
-                                        child: Container(
-                                          height: 300,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.5,
+                                          height: 500,
                                           child: Column(
                                             children: [
                                               PrimaryText(
@@ -291,6 +186,9 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                                                 color: Color.fromARGB(
                                                     255, 24, 111, 250),
                                               ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
                                               Expanded(
                                                 child: PieChartPage(),
                                               ),
@@ -299,32 +197,6 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                                         ),
                                       ),
                                     ],
-                                  ),
-                                  SizedBox(
-                                    height: SizeConfig.getInstance()
-                                            .blockSizeVertical *
-                                        5,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      PrimaryText(
-                                          text: 'History',
-                                          size: 30,
-                                          fontWeight: FontWeight.w800),
-                                      PrimaryText(
-                                        text: 'Courses of last month',
-                                        size: 16,
-                                        fontWeight: FontWeight.w400,
-                                        color: AppColors.secondary,
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: SizeConfig.getInstance()
-                                            .blockSizeVertical *
-                                        3,
                                   ),
                                   HistoryTable(),
                                   if (!Responsive.isDesktop(context))

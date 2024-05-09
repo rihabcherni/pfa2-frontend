@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:pfa_frontend/screens/admin/pages/admin_dashboard_screen.dart';
 import 'package:pfa_frontend/screens/admin/pages/admin_profile_screen.dart';
 import 'package:pfa_frontend/screens/admin/pages/teachers_admin_screen.dart';
@@ -32,13 +31,13 @@ class SideMenuAdmin extends StatelessWidget {
                 width: double.infinity,
                 padding: EdgeInsets.only(top: 20),
                 child: SizedBox(
-                  width: 35,
-                  height: 20,
-                  child: SvgPicture.asset('assets/images/logo.png'),
+                  width: 80,
+                  height: 80,
+                  child: Image.asset('assets/images/logo.png'),
                 ),
               ),
               IconButton(
-                  iconSize: 35,
+                  iconSize: 30,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   icon: Icon(
                     Icons.home,
@@ -52,7 +51,7 @@ class SideMenuAdmin extends StatelessWidget {
                         ));
                   }),
               IconButton(
-                  iconSize: 35,
+                  iconSize: 30,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   icon: Icon(
                     Icons.school,
@@ -66,7 +65,7 @@ class SideMenuAdmin extends StatelessWidget {
                         ));
                   }),
               IconButton(
-                  iconSize: 35,
+                  iconSize: 30,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   icon: Icon(
                     Icons.people,
@@ -80,7 +79,7 @@ class SideMenuAdmin extends StatelessWidget {
                         ));
                   }),
               IconButton(
-                  iconSize: 35,
+                  iconSize: 30,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   icon: Icon(
                     Icons.book_rounded,
@@ -94,7 +93,7 @@ class SideMenuAdmin extends StatelessWidget {
                         ));
                   }),
               IconButton(
-                  iconSize: 35,
+                  iconSize: 30,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   icon: Icon(
                     Icons.manage_accounts,
@@ -108,18 +107,34 @@ class SideMenuAdmin extends StatelessWidget {
                         ));
                   }),
               IconButton(
-                  iconSize: 35,
+                  iconSize: 30,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   icon: Icon(
                     Icons.logout,
                     color: AppColors.iconGray,
                   ),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AllCourseScreen(),
-                        ));
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text("Logout"),
+                          content: Text("Logout successful"),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => AllCourseScreen(),
+                                    ));
+                              },
+                              child: Text("OK"),
+                            ),
+                          ],
+                        );
+                      },
+                    );
                   }),
             ],
           ),
