@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pfa_frontend/utils/color.dart';
 
 class TopCourseScreen extends StatelessWidget {
   const TopCourseScreen({super.key});
@@ -7,7 +8,12 @@ class TopCourseScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Top courses'),
+        title: Text(
+          'Top courses',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: kPrimaryColor,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: const Center(
         child: Text('Top courses'),

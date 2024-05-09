@@ -3,6 +3,7 @@ import 'package:pfa_frontend/screens/admin/pages/admin_dashboard_screen.dart';
 import 'package:pfa_frontend/screens/admin/pages/admin_profile_screen.dart';
 import 'package:pfa_frontend/screens/student/pages/home_screen.dart';
 import 'package:pfa_frontend/screens/student/pages/quiz_screen.dart';
+import 'package:pfa_frontend/screens/student/pages/score_screen.dart';
 import 'package:pfa_frontend/screens/student/pages/settings_screen.dart';
 import 'package:pfa_frontend/screens/student/pages/student_dashboard_screen.dart';
 import 'package:pfa_frontend/screens/student/pages/student_profile_screen.dart';
@@ -85,14 +86,13 @@ class ListeRouter {
       case '/quiz':
         return MaterialPageRoute(builder: (_) => QuizScreen());
       case '/quiz/score':
-        return MaterialPageRoute(builder: (_) => QuizScreen());
+        return MaterialPageRoute(builder: (_) => ScoreScreen());
 
       case '/teacher':
         return MaterialPageRoute(builder: (_) => HomeScreenTeacher());
-      case '/Etudiant': 
-        return MaterialPageRoute(
-            builder: (_) => EtudiantScreen()); 
-      case '/profile': 
+      case '/Etudiant':
+        return MaterialPageRoute(builder: (_) => EtudiantScreen());
+      case '/profile':
         return MaterialPageRoute(builder: (_) => ProfileScreen());
 
       // admin

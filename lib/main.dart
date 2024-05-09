@@ -1,4 +1,3 @@
-import 'package:accessibility_tools/accessibility_tools.dart';
 import 'package:flutter/material.dart';
 import 'package:pfa_frontend/routes/liste_routes.dart';
 import 'package:pfa_frontend/utils/auth_provider.dart';
@@ -7,6 +6,7 @@ import 'package:pfa_frontend/utils/setting_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MultiProvider(
       providers: [

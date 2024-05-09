@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:pfa_frontend/utils/color.dart';
 
 class UpdateProfileScreen extends StatefulWidget {
   const UpdateProfileScreen({Key? key}) : super(key: key);
@@ -11,10 +12,10 @@ class UpdateProfileScreen extends StatefulWidget {
 }
 
 class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
-  String _fullName = 'John Doe'; 
-  String _email = 'johndoe@example.com'; 
-  String _phone = '123-456-7890'; 
-  String _password = 'password'; 
+  String _fullName = 'John Doe';
+  String _email = 'johndoe@example.com';
+  String _phone = '123-456-7890';
+  String _password = 'password';
   File? _image;
 
   @override
@@ -25,7 +26,12 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
           onPressed: () => Navigator.of(context).pop(),
           icon: const Icon(Icons.arrow_back),
         ),
-        title: const Text('Edit Profile'),
+        title: Text(
+          'Edit Profile',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: kPrimaryColor,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -37,7 +43,9 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                   onTap: _getImage,
                   child: CircleAvatar(
                     radius: 60,
-                    backgroundImage: _image != null ? FileImage(_image!) : AssetImage('images/account.png') as ImageProvider,
+                    backgroundImage: _image != null
+                        ? FileImage(_image!)
+                        : AssetImage('images/account.png') as ImageProvider,
                   ),
                 ),
                 Positioned(
@@ -50,13 +58,13 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                       borderRadius: BorderRadius.circular(100),
                       color: Colors.blue,
                     ),
-                    child: const Icon(Icons.camera, color: Colors.black, size: 20),
+                    child:
+                        const Icon(Icons.camera, color: Colors.black, size: 20),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 50),
-
             TextFormField(
               initialValue: _fullName,
               onChanged: (value) => _fullName = value,
@@ -98,7 +106,6 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
               ),
             ),
             const SizedBox(height: 20),
-
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -125,8 +132,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
     print('Email: $_email');
     print('Phone: $_phone');
     print('Password: $_password');
-    if (_image != null) {
-    }
+    if (_image != null) {}
   }
 
   Future<void> _getImage() async {

@@ -176,6 +176,10 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                                       Expanded(
                                         child: Container(
                                           height: 300,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.5,
                                           child: Column(
                                             children: [
                                               Row(
@@ -269,9 +273,14 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                                           ),
                                         ),
                                       ),
+                                      SizedBox(width: 16),
                                       Expanded(
                                         child: Container(
                                           height: 300,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.5,
                                           child: Column(
                                             children: [
                                               PrimaryText(

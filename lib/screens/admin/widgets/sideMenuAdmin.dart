@@ -5,6 +5,7 @@ import 'package:pfa_frontend/screens/admin/pages/admin_profile_screen.dart';
 import 'package:pfa_frontend/screens/admin/pages/teachers_admin_screen.dart';
 import 'package:pfa_frontend/screens/admin/pages/courses_admin_screen.dart';
 import 'package:pfa_frontend/screens/admin/pages/students_admin_screen.dart';
+import 'package:pfa_frontend/screens/visitor/pages/all_course.dart';
 import 'package:pfa_frontend/utils/color.dart';
 import 'package:pfa_frontend/utils/size_config.dart';
 
@@ -33,12 +34,11 @@ class SideMenuAdmin extends StatelessWidget {
                 child: SizedBox(
                   width: 35,
                   height: 20,
-                  child: SvgPicture.asset('assets/admin/mac-action.svg'),
+                  child: SvgPicture.asset('assets/images/logo.png'),
                 ),
               ),
-
               IconButton(
-                  iconSize: 40,
+                  iconSize: 35,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   icon: Icon(
                     Icons.home,
@@ -52,7 +52,7 @@ class SideMenuAdmin extends StatelessWidget {
                         ));
                   }),
               IconButton(
-                  iconSize: 40,
+                  iconSize: 35,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   icon: Icon(
                     Icons.school,
@@ -65,9 +65,8 @@ class SideMenuAdmin extends StatelessWidget {
                           builder: (context) => Students(),
                         ));
                   }),
-
               IconButton(
-                  iconSize: 40,
+                  iconSize: 35,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   icon: Icon(
                     Icons.people,
@@ -81,7 +80,7 @@ class SideMenuAdmin extends StatelessWidget {
                         ));
                   }),
               IconButton(
-                  iconSize: 40,
+                  iconSize: 35,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   icon: Icon(
                     Icons.book_rounded,
@@ -95,7 +94,7 @@ class SideMenuAdmin extends StatelessWidget {
                         ));
                   }),
               IconButton(
-                  iconSize: 40,
+                  iconSize: 35,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   icon: Icon(
                     Icons.manage_accounts,
@@ -106,6 +105,20 @@ class SideMenuAdmin extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => AdminProfileScreen(),
+                        ));
+                  }),
+              IconButton(
+                  iconSize: 35,
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  icon: Icon(
+                    Icons.logout,
+                    color: AppColors.iconGray,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AllCourseScreen(),
                         ));
                   }),
             ],

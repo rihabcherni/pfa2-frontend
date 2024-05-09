@@ -3,6 +3,7 @@ import 'package:accordion/controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:pfa_frontend/models/Lecons.dart';
 import 'package:pfa_frontend/services/visitor/lesson_details_visitor.dart';
+import 'package:pfa_frontend/utils/color.dart';
 import 'package:pfa_frontend/utils/setting_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +17,12 @@ class LessonDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lesson Details'),
+        title: Text(
+          'Lesson Details',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: kPrimaryColor,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: FutureBuilder<LessonDetails>(
         future: LessonDetailsService().fetchLessonDetails(lessonId),

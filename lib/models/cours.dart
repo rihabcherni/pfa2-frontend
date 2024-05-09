@@ -39,7 +39,7 @@ class Course {
   final String description;
   final String langue;
   final String niveau;
-  final String createdAt;
+  late final String createdAt;
   final String category;
   final String auteur;
   final String auteurPhoto;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pfa_frontend/models/cours.dart';
 import 'package:pfa_frontend/services/visitor/category_cours_service.dart';
+import 'package:pfa_frontend/utils/color.dart';
 
 class CoursesCategoryScreen extends StatefulWidget {
   final int categoryId;
@@ -25,7 +26,12 @@ class _CoursesCategoryScreenState extends State<CoursesCategoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Courses'),
+        title: Text(
+          'Courses',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: kPrimaryColor,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: FutureBuilder<List<Course>>(
         future: _futureCourses,
@@ -42,8 +48,7 @@ class _CoursesCategoryScreenState extends State<CoursesCategoryScreen> {
                 return ListTile(
                   title: Text(course.titre),
                   subtitle: Text(course.description),
-                  onTap: () {
-                  },
+                  onTap: () {},
                 );
               },
             );

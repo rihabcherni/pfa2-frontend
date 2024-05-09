@@ -2,11 +2,10 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:pfa_frontend/models/Questions.dart';
 import 'package:pfa_frontend/screens/student/pages/score_screen.dart';
-
+import 'package:pfa_frontend/screens/visitor/pages/loading_screen.dart';
 
 class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
-
   late AnimationController _animationController;
   late Animation _animation;
   Animation get animation => this._animation;
@@ -70,7 +69,7 @@ class QuestionController extends GetxController
     _animationController.stop();
     update();
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 1), () {
       nextQuestion();
     });
   }
@@ -85,7 +84,7 @@ class QuestionController extends GetxController
 
       _animationController.forward().whenComplete(nextQuestion);
     } else {
-      Get.to(ScoreScreen());
+      Get.dialog(LoadingScreen());
     }
   }
 

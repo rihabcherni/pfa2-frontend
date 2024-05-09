@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pfa_frontend/models/cours.dart';
 import 'package:pfa_frontend/screens/visitor/pages/lesson_section.dart';
+import 'package:pfa_frontend/screens/visitor/widgets/quizStart.dart';
 import 'package:pfa_frontend/services/visitor/cours_details_visitor_service.dart';
 import 'package:pfa_frontend/utils/color.dart';
 import 'package:pfa_frontend/screens/student/widgets/description_section.dart';
@@ -242,7 +243,7 @@ class _CourseScreenState extends State<CourseScreen> {
       case 'description':
         return DescriptionSection();
       case 'quiz':
-        return QuizScreen();
+        return QuizStartScreen();
       default:
         return Container();
     }

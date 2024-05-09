@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pfa_frontend/utils/color.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -14,7 +15,12 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: Text(
+          'Settings',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: kPrimaryColor,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
@@ -31,22 +37,17 @@ class _SettingsPageState extends State<SettingsPage> {
           ListTile(
             title: const Text('Notifications'),
             trailing: const Icon(Icons.arrow_forward_ios),
-            onTap: () {
-            
-            },
+            onTap: () {},
           ),
           ListTile(
             title: const Text('Privacy Policy'),
             trailing: const Icon(Icons.arrow_forward_ios),
-            onTap: () {
-             
-            },
+            onTap: () {},
           ),
           ListTile(
             title: const Text('Terms of Service'),
             trailing: const Icon(Icons.arrow_forward_ios),
-            onTap: () {
-            },
+            onTap: () {},
           ),
         ],
       ),
@@ -61,7 +62,12 @@ class NotificationsSettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notifications Settings'),
+        title: Text(
+          'Notifications Settings',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: kPrimaryColor,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: Center(
         child: const Text('Notifications Settings Page'),

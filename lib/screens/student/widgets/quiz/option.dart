@@ -54,15 +54,13 @@ class Option extends StatelessWidget {
                     "${index + 1}. $text",
                     style: TextStyle(
                       color: getTheRightColor(),
-                      fontSize: context
-                          .watch<SettingsProvider>()
-                          .settings
-                          .bigTextSize,
+                      fontSize:
+                          context.watch<SettingsProvider>().settings.textSize,
                     ),
                   ),
                   Container(
-                    height: 26,
-                    width: 26,
+                    height: 20,
+                    width: 20,
                     decoration: BoxDecoration(
                       color: getTheRightColor() == kGrayColor
                           ? Colors.transparent

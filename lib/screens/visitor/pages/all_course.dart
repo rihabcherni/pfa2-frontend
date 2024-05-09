@@ -108,7 +108,7 @@ class _AllCourseScreenState extends State<AllCourseScreen> {
                         ),
                       ),
                       SizedBox(
-                        width: 50,
+                        width: 100,
                       ),
                       IconButton(
                         onPressed: () {

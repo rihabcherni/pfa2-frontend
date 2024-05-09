@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:pfa_frontend/utils/color.dart';
-import 'package:pfa_frontend/utils/constants.dart';
 
 class HeaderAuth extends StatelessWidget {
   const HeaderAuth({

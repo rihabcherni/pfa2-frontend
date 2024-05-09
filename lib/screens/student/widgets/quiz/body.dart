@@ -7,10 +7,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:pfa_frontend/utils/color.dart';
 import 'package:pfa_frontend/utils/constants.dart';
 
-
 class Body extends StatelessWidget {
   const Body({
-     Key  ? key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -39,14 +38,14 @@ class Body extends StatelessWidget {
                           "Question ${_questionController.questionNumber.value}",
                       style: Theme.of(context)
                           .textTheme
-                          .headline4
+                          .headline5
                           ?.copyWith(color: kSecondaryColor),
                       children: [
                         TextSpan(
                           text: "/${_questionController.questions.length}",
                           style: Theme.of(context)
                               .textTheme
-                              .headline5
+                              .headline6
                               ?.copyWith(color: kSecondaryColor),
                         ),
                       ],
@@ -58,7 +57,7 @@ class Body extends StatelessWidget {
               SizedBox(height: kDefaultPadding),
               Expanded(
                 child: PageView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: AlwaysScrollableScrollPhysics(),
                   controller: _questionController.pageController,
                   onPageChanged: _questionController.updateTheQnNum,
                   itemCount: _questionController.questions.length,

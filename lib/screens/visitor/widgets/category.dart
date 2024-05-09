@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pfa_frontend/models/category.dart';
 import 'package:pfa_frontend/screens/visitor/pages/course_par_category.dart';
 import 'package:pfa_frontend/services/student/category_service.dart';
-import 'package:pfa_frontend/utils/constants.dart';
+import 'package:pfa_frontend/utils/color.dart';
 import 'package:pfa_frontend/utils/setting_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -35,7 +35,12 @@ class _CategoryCourseScreenState extends State<CategoryCourseScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Categories'),
+        title: Text(
+          'Categories',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: kPrimaryColor,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: FutureBuilder<List<Category>>(
         future: _categoryService.getCategories(),
